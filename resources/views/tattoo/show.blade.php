@@ -10,6 +10,11 @@
         <p>Artista: {{ $tattoo->artist->name ?? 'N/A' }}</p>
         <p>Descrizione: {{ $tattoo->description }}</p>
         <p>Durata: {{ $tattoo->time }} minuti</p>
+        <p>Stili: 
+            @foreach($tattoo->styles as $style)
+                {{ $style->name }}@if(!$loop->last), @endif
+            @endforeach
+        </p>
 
         {{-- SEZIONE AZIONI --}}
         <section>

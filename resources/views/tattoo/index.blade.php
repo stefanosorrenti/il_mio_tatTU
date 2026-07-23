@@ -11,6 +11,11 @@
 
         {{-- Sezione tatuaggi --}}
         <section>
+            <button class="btn btn-success mb-3">
+                <a href="{{ route('tattoo.create') }}" class="text-decoration-none text-white">
+                    <i class="bi bi-plus-circle"></i> Aggiungi un nuovo tatuaggio
+                </a>
+            </button>
             <div class="overflow-auto">
 
 
@@ -30,11 +35,12 @@
                             <tr>
                                 <td>
                                     <span class="ratio ratio-1x1">
-                                        <img src="{{ asset('storage/' . $tattoo->image_path) }}" alt="{{ 'IMMAGINE' }}"></td>
+                                        <img src="{{ asset('storage/' . $tattoo->image_path) }}" alt="{{ 'IMMAGINE' }}">
                                     </span>
+                                </td>
                                 <td>{{ $tattoo->title }}</td>
                                 <td>{{ $tattoo->price }} €</td>
-                                <td>{{ 'prova' }}</td>
+                                <td>{{ $tattoo->artist->name ?? 'N/A' }}</td>
                                 <td>
                                     <a href="{{ route('tattoo.show', $tattoo->id) }}" class="btn btn-primary">
                                         <i class="bi bi-eye-fill"></i>

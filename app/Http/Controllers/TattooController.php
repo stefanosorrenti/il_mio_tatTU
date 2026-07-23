@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tattoo;
 use App\Models\Artist;
+use App\Models\Style;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -23,7 +24,9 @@ class TattooController extends Controller
      */
     public function create()
     {
-        //
+        $artists = Artist::all();
+        $styles = Style::all();
+        return view('tattoo.create', compact('artists', 'styles'));
     }
 
     /**
@@ -31,7 +34,30 @@ class TattooController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newTattoo = new Tattoo();
+        $newTattoo->title = $data['title'];
+        $newTattoo->description = $data['description'];
+        $newTattoo->time = $data['time'];
+        $newTattoo->price = $data['price'];
+        $newTattoo->artist_id = $data['artist_id'];
+        //Controllo se l'immagine è stata caricata
+        if (array_key_exists('image', $data)) {
+            //Salvo l'immagine e aggiorno il path
+            $newTattoo->image_path = Storage::put('tattoos', $data['image']);
+        }
+
+
+        $newTattoo->save();
+
+        
+        
+        // Associo gli stili selezionati (N:N)
+        if (array_key_exists('styles', $data)) {
+            $newTattoo->styles()->attach($data['styles']);
+        }
+
+        return redirect()->route('tattoo.show', $newTattoo->id);
     }
 
     /**
@@ -48,7 +74,8 @@ class TattooController extends Controller
     public function edit(Tattoo $tattoo)
     {
         $artists = Artist::all();
-        return view('tattoo.edit', compact('tattoo', 'artists'));
+        $styles = Style::all();
+        return view('tattoo.edit', compact('tattoo', 'artists', 'styles'));
     }
 
     /**
@@ -61,12 +88,14 @@ class TattooController extends Controller
         $tattoo->description = $data['description'];
         $tattoo->time = $data['time'];
         $tattoo->price = $data['price'];
+        $tattoo->artist_id = $data['artist_id'];
 
-        //Cotrollo se l'immagina è stata caricata
-        if(array_key_exists('image', $data)) {
+        
+        //Controllo se l'immagine è stata caricata
+        if (array_key_exists('image', $data)) {
 
             //Controllo se l'immagine già esiste
-            if($tattoo->image_path) {
+            if ($tattoo->image_path) {
 
                 Storage::delete($tattoo->image_path);
             }
@@ -74,9 +103,20 @@ class TattooController extends Controller
             //Salvo l'immagine e aggiorno il path
             $tattoo->image_path = Storage::put('tattoos', $data['image']);
         }
+        
+        
+        $tattoo->update();
+        
 
-        $tattoo->save();
-        return redirect()->route('tattoo.index');
+
+        // Aggiorno gli stili selezionati (N:N)
+        if (array_key_exists('styles', $data)) {
+            $tattoo->styles()->sync($data['styles']);
+        } else {
+            $tattoo->styles()->detach();
+        }
+
+        return redirect()->route('tattoo.show', $tattoo->id);
     }
 
     /**
@@ -84,7 +124,7 @@ class TattooController extends Controller
      */
     public function destroy(Tattoo $tattoo)
     {
-      
+        
         $tattoo->delete();
 
         return redirect()->route('tattoo.index');

@@ -59,6 +59,20 @@
                     </select>
                 </div>
 
+                {{-- Stile checkbox --}}
+                <div class="mb-3 d-flex flex-row flex-wrap gap-3">
+                    @foreach ($styles as $style)
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="styles[]" value="{{ $style->id }}"
+                                id="style{{ $style->id }}"
+                                {{ $tattoo->styles->contains($style->id) ? 'checked' : '' }}>
+                            <label class="form-check-label" for="style{{ $style->id }}">
+                                {{ $style->name }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+
                 <button type="submit" class="btn btn-primary">Aggiorna</button>
             </form>
         </section>
