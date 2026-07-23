@@ -23,7 +23,7 @@
                                 <div class="card h-100 py-4 d-flex align-items-center justify-content-center">
                                     <span class="d-flex flex-column align-items-center justify-content-center">
                                         <i class="bi bi-pencil-fill fs-1"></i>
-                                        <a class="text-center">TATUAGGI</a>
+                                        <a href="{{ route('tattoo.index') }}" class="text-center">TATUAGGI</a>
                                     </span>
                                 </div>
                             </div>
