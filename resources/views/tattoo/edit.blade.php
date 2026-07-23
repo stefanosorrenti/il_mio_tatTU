@@ -47,6 +47,18 @@
                     @endif
                 </div>
 
+                <div class="mb-3">
+                    <label for="artist_id" class="form-label">Artista</label>
+                    <select class="form-select" id="artist_id" name="artist_id" required>
+                        @foreach ($artists as $artist)
+                            <option value="{{ $artist->id }}"
+                                {{ $tattoo->artist_id == $artist->id ? 'selected' : '' }}>
+                                {{ $artist->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Aggiorna</button>
             </form>
         </section>

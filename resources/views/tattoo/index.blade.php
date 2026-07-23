@@ -28,7 +28,10 @@
                     <tbody class="text-center">
                         @foreach ($tattoos as $tattoo)
                             <tr>
-                                <td><img src="{{ $tattoo->image }}" alt="{{ 'IMMAGINE' }}"></td>
+                                <td>
+                                    <span class="ratio ratio-1x1">
+                                        <img src="{{ asset('storage/' . $tattoo->image_path) }}" alt="{{ 'IMMAGINE' }}"></td>
+                                    </span>
                                 <td>{{ $tattoo->title }}</td>
                                 <td>{{ $tattoo->price }} €</td>
                                 <td>{{ 'prova' }}</td>
