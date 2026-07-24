@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('styles', function (Blueprint $table) {
-            //Definico le colonne della tabella styles
+            //Definico le colonne della tabella styl
             $table->id();
             $table->string('name');
             $table->timestamps();
