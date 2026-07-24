@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        {{--  Dettaglio tatuaggio --}}
         <div class="ratio ratio-1x1 w-50 mx-auto my-5">
             <img src="{{ asset('storage/' . $tattoo->image_path) }}" alt="{{ $tattoo->title }}">
         </div>
@@ -16,8 +17,8 @@
             @endforeach
         </p>
 
-        {{-- SEZIONE AZIONI --}}
-        <section>
+        {{-- Azioni --}}
+        <div>
             <button class="btn btn-success"><a href="{{ route('tattoo.index') }}">Torna alla lista</a></button>
             <button class="btn btn-warning"><a href="{{ route('tattoo.edit', $tattoo->id) }}">Modifica</a></button>
             <form action="{{ route('tattoo.destroy', $tattoo->id) }}" method="POST" class="d-inline">
@@ -25,6 +26,6 @@
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger" onclick="return confirm('Sei sicuro di voler eliminare questo tatuaggio?')">Elimina</button>
             </form>
-        </section>
+        </div>
     </div>
 @endsection

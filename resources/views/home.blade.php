@@ -33,7 +33,7 @@
                                 <div class="card h-100 py-4 d-flex align-items-center justify-content-center">
                                     <span class="d-flex flex-column align-items-center justify-content-center">
                                         <i class="bi bi-people-fill fs-1"></i>
-                                        <a class="text-center">ARTISTI</a>
+                                        <a href="{{ route('artist.index') }}" class="text-center">ARTISTI</a>
                                     </span>
                                 </div>
                             </div>

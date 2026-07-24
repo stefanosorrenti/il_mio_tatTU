@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TattooController;
+use App\Http\Controllers\ArtistController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,5 +19,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Rotte tattoo
 Route::resource('tattoo', TattooController::class);
+
+// Rotte artist
+Route::resource('artist', ArtistController::class);
 require __DIR__.'/auth.php';
