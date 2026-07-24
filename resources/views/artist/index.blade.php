@@ -14,7 +14,7 @@
         {{-- Sezione artisti --}}
          <section>
             <button class="btn btn-success mb-3">
-                <a href="" class="text-decoration-none text-white">
+                <a href="{{ route('artist.create') }}" class="text-decoration-none text-white">
                     <i class="bi bi-plus-circle"></i> Aggiungi un nuovo artista
                 </a>
             </button>

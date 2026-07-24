@@ -2,7 +2,12 @@
 
 @section('content')
     <div class="container">
-        <h1>Crea un Nuovo Tatuaggio</h1>
+
+        {{-- Sezione introduttiva --}}
+        <section class="text-center my-5">
+            <h1>Crea un Nuovo Tatuaggio</h1>
+            <p>Compila il form sottostante per aggiungere un nuovo tatuaggio al database.</p>
+        </section>
 
         <form action="{{ route('tattoo.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
