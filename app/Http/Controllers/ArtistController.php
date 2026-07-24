@@ -57,7 +57,8 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
-        return view('artist.edit', compact('artist'));
+        $nationalities = Nationality::all()->sortBy('name');
+        return view('artist.edit', compact('artist', 'nationalities'));
     }
 
     /**
@@ -71,10 +72,10 @@ class ArtistController extends Controller
         $artist->surname = $data['surname'];
         $artist->age = $data['age'];
         $artist->bio = $data['bio'];
-        $artist->nationality = $data['nationality'];
-        $artist->save();
+        $artist->nationality_id = $data['nationality_id'];
+        $artist->update();
 
-        return redirect()->route('artist.index');
+        return redirect()->route('artist.show', $artist->id);
     }
 
     /**

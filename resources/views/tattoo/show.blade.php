@@ -8,7 +8,7 @@
         </div>
         <h1>{{ $tattoo->title }}</h1>
         <p>Prezzo: {{ $tattoo->price }} €</p>
-        <p>Artista: {{ $tattoo->artist->name ?? 'N/A' }}</p>
+        <p>Artista: {{ $tattoo->artist->name ?? 'N/A' }} {{ $tattoo->artist->surname ?? '' }} ( {{ $tattoo->artist->nationality->name ?? 'N/A' }} )</p>
         <p>Descrizione: {{ $tattoo->description }}</p>
         <p>Durata: {{ $tattoo->time }} minuti</p>
         <p>Stili: 
