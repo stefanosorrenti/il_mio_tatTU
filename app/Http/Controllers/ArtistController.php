@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Artist;
+use App\Models\Nationality;
 class ArtistController extends Controller
 {
     /**
@@ -21,7 +22,9 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        return view('artist.create');
+        $nationalities = Nationality::all()->sortBy('name');
+        
+        return view('artist.create', compact('nationalities'));
     }
 
     /**
@@ -30,15 +33,15 @@ class ArtistController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-
+        
         $newArtist = new Artist();
         $newArtist->name = $data['name'];
         $newArtist->surname = $data['surname'];
         $newArtist->age = $data['age'];
         $newArtist->bio = $data['bio'];
-        $newArtist->nationality = $data['nationality'];
+        $newArtist->nationality_id = $data['nationality_id'];
         $newArtist->save();
-        return redirect()->route('artist.index');
+        return redirect()->route('artist.show', $newArtist->id);
     }
 
     /**

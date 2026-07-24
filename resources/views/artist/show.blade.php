@@ -9,7 +9,7 @@
             <h1>{{ $artist->name }} {{ $artist->surname }}</h1>
             <p>Eta: {{ $artist->age }}</p>
             <p>Biografia: {{ $artist->bio }}</p>
-            <p>Nazionalità: {{ $artist->nationality }}</p>
+            <p>Nazionalità: {{ $artist->nationality->name }}</p>
         </div>
 
         {{-- Azioni --}}

@@ -34,7 +34,11 @@
 
                 <div class="mb-3">
                     <label for="nationality" class="form-label">Nazionalità</label>
-                    <input type="text" class="form-control" id="nationality" name="nationality" required>
+                    <select class="form-control" id="nationality" name="nationality_id" required>
+                        @foreach($nationalities as $nationality)
+                            <option value="{{ $nationality->id }}">{{ $nationality->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Salva</button>
             </form>
