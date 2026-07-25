@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TattooController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\StyleController;
+use App\Http\Controllers\ExtraController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,4 +29,8 @@ Route::resource('artist', ArtistController::class);
 
 // Rotte style
 Route::resource('style', StyleController::class);
+
+// Rotta per la pagina extra
+Route::get('/extra', [ExtraController::class, 'extra'])->name('extra');
+
 require __DIR__.'/auth.php';

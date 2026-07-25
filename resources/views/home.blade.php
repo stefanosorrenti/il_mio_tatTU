@@ -53,7 +53,7 @@
                                 <div class="card h-100 py-4 d-flex align-items-center justify-content-center">
                                     <span class="d-flex flex-column align-items-center justify-content-center">
                                         <i class="bi bi-gear fs-1"></i>
-                                        <a class="text-center">ALTRO</a>
+                                        <a href="{{ route('extra') }}" class="text-center">EXTRA</a>
                                     </span>
                                 </div>
                             </div>
