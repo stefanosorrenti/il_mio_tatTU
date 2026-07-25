@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        
         {{--  Dettaglio tatuaggio --}}
         <div class="ratio ratio-1x1 w-50 mx-auto my-5">
             <img src="{{ asset('storage/' . $tattoo->image_path) }}" alt="{{ $tattoo->title }}">

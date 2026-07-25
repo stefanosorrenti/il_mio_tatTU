@@ -2,15 +2,15 @@
 
 @section('content')
 
-    {{-- SEZIONE INTRODUTTIVA --}}
+    {{-- Sezione introduttiva --}}
     <div class="container">
         <section class="text-center my-5">
             <h2>Modifica tatuaggio</h2>
             <p>Modifica i dettagli del tatuaggio.</p>
         </section>
 
-        {{-- SEZIONE FORM EDIT --}}
-        <section>
+        {{-- Sezione form edit --}}
+        <div>
             <form action="{{ route('tattoo.update', $tattoo->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -59,7 +59,7 @@
                     </select>
                 </div>
 
-                {{-- Stile checkbox --}}
+                
                 <div class="mb-3 d-flex flex-row flex-wrap gap-3">
                     @foreach ($styles as $style)
                         <div class="form-check">
@@ -75,6 +75,6 @@
 
                 <button type="submit" class="btn btn-primary">Aggiorna</button>
             </form>
-        </section>
+        </div>
     </div>
 @endsection

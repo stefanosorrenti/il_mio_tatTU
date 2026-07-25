@@ -4,7 +4,6 @@
     <div class="container">
 
         {{-- Dettaglio Artista --}}
-
         <div class="my-5 ">
             <h1>{{ $artist->name }} {{ $artist->surname }}</h1>
             <p>Eta: {{ $artist->age }}</p>

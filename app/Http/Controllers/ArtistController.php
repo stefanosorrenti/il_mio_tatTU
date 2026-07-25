@@ -57,6 +57,7 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
+        // Recupero tutte le nazionalità in ordine alfabetico
         $nationalities = Nationality::all()->sortBy('name');
         return view('artist.edit', compact('artist', 'nationalities'));
     }

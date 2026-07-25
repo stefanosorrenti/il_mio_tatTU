@@ -11,7 +11,7 @@
         </section>
 
         {{-- Sezione form --}}
-        <section>
+        <div>
             <form action="{{ route('artist.store') }}" method="POST">
                 @csrf
                 <div class="mb-3">

@@ -10,8 +10,8 @@
             <p>Compila il form sottostante per modificare le informazioni dell'artista.</p>
         </section>
 
-        {{-- Sezione form --}}
-        <section>
+        {{-- Sezione form edit --}}
+        <div>
             <form action="{{ route('artist.update', $artist->id) }}" method="POST">
                 @csrf
                 @method('PUT')
@@ -43,7 +43,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Salva</button>
             </form>
-        </section>
+        </div>
 
     </div>
 @endsection

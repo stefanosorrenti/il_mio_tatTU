@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TattooController;
 use App\Http\Controllers\ArtistController;
+use App\Http\Controllers\StyleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,4 +25,7 @@ Route::resource('tattoo', TattooController::class);
 
 // Rotte artist
 Route::resource('artist', ArtistController::class);
+
+// Rotte style
+Route::resource('style', StyleController::class);
 require __DIR__.'/auth.php';

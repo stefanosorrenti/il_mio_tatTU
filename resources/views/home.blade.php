@@ -43,7 +43,7 @@
                                 <div class="card h-100 py-4 d-flex align-items-center justify-content-center">
                                     <span class="d-flex flex-column align-items-center justify-content-center">
                                         <i class="bi bi-card-checklist fs-1"></i>
-                                        <a class="text-center">STILI</a>
+                                        <a href="{{ route('style.index') }}" class="text-center">STILI</a>
                                     </span>
                                 </div>
                             </div>
