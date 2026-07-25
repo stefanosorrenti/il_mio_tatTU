@@ -28,7 +28,12 @@ class StyleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all(); 
+        $style = new Style();
+        $style->name = $data['name'];
+        $style->save();
+
+        return redirect()->route('style.index');
     }
 
     /**
