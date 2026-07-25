@@ -68,8 +68,9 @@ class StyleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Style $style)
     {
-        //
+        $style->delete();
+        return redirect()->route('style.index');
     }
 }
