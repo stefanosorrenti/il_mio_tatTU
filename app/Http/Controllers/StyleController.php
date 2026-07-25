@@ -20,7 +20,7 @@ class StyleController extends Controller
      */
     public function create()
     {
-        //
+        return view('style.create');
     }
 
     /**
