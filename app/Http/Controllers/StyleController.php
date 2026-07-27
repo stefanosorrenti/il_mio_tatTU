@@ -11,8 +11,14 @@ class StyleController extends Controller
      */
     public function index()
     {
+        $introTitle = 'Tutti gli stili.';
+        $introText = 'In questa sezione puoi trovare tutti gli stili presenti 
+        nel nostro database. Puoi visualizzare i dettagli di ciascun stile, 
+        modificarli o eliminarli se necessario. Inoltre, puoi aggiungere nuovi 
+        stili utilizzando il pulsante "Aggiungi Stile".';
+        
         $styles = Style::all();
-        return view('style.index', compact('styles'));
+        return view('style.index', compact('styles', 'introTitle', 'introText'));
     }
 
     /**
@@ -20,7 +26,9 @@ class StyleController extends Controller
      */
     public function create()
     {
-        return view('style.create');
+        $introTitle = 'Aggiungi un nuovo stile';
+        $introText = 'Compila il form sottostante per aggiungere un nuovo stile al database.';
+        return view('style.create', compact('introTitle', 'introText'));
     }
 
     /**
@@ -49,8 +57,9 @@ class StyleController extends Controller
      */
     public function edit(Style $style)
     {
-        
-        return view('style.edit', compact('style'));
+        $introTitle = 'Modifica Stile';
+        $introText = 'Compila il form sottostante per modificare le informazioni dello stile.';
+        return view('style.edit', compact('style', 'introTitle', 'introText'));
     }
 
     /**

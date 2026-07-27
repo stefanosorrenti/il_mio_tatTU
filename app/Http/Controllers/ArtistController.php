@@ -12,8 +12,14 @@ class ArtistController extends Controller
      */
     public function index()
     {
+        $introTitle = 'Tutti gli artisti';
+        $introText = 'In questa sezione puoi trovare tutti gli artisti presenti 
+        nel nostro database. Puoi visualizzare i dettagli di ciascun artista, 
+        modificarli o eliminarli se necessario. Inoltre, puoi aggiungere nuovi 
+        artisti utilizzando il pulsante "Aggiungi Artista".';
+
         $artists = Artist::all();
-        return view('artist.index', compact('artists'));
+        return view('artist.index', compact('artists', 'introTitle', 'introText'));
         
     }
 
@@ -22,9 +28,12 @@ class ArtistController extends Controller
      */
     public function create()
     {
+        $introTitle = 'Aggiungi un nuovo artista';
+        $introText = 'Compila il form sottostante per aggiungere un nuovo artista al database.';
+
         $nationalities = Nationality::all()->sortBy('name');
         
-        return view('artist.create', compact('nationalities'));
+        return view('artist.create', compact('nationalities', 'introTitle', 'introText'));
     }
 
     /**
@@ -57,9 +66,12 @@ class ArtistController extends Controller
      */
     public function edit(Artist $artist)
     {
+        $introTitle = 'Modifica artista';
+        $introText = 'Compila il form sottostante per modificare le informazioni dell\'artista.';
+
         // Recupero tutte le nazionalità in ordine alfabetico
         $nationalities = Nationality::all()->sortBy('name');
-        return view('artist.edit', compact('artist', 'nationalities'));
+        return view('artist.edit', compact('artist', 'nationalities', 'introTitle', 'introText'));
     }
 
     /**

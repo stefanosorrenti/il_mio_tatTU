@@ -3,11 +3,8 @@
 @section('content')
     <div class="container">
 
-        {{-- Sezione introduttiva --}}
-        <section class="text-center my-5">
-            <h1>Crea un Nuovo Tatuaggio</h1>
-            <p>Compila il form sottostante per aggiungere un nuovo tatuaggio al database.</p>
-        </section>
+        
+          @include('partials.introSection', ['introTitle' => $introTitle, 'introText' => $introText])
 
         {{-- Sezione form --}}
         <div>

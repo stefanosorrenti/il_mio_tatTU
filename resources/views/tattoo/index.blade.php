@@ -1,12 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- Sezione introduttiva --}}
+    
+
     <div class="container">
-        <section class="text-center my-5">
-            <h2>Tutti i tatuaggi</h2>
-            <p>Clicca sulle relative icone per visualizzare/modificare/eliminare il tatuaggio.</p>
-        </section>
+        
+          @include('partials.introSection', ['introTitle' => $introTitle, 'introText' => $introText])
 
 
         {{-- Sezione tatuaggi --}}

@@ -4,11 +4,7 @@
 @section('content')
     <div class="container">
 
-        {{-- Sezione introduttiva --}}
-        <section class="text-center my-5">
-            <h1>Tutti gli artisti</h1>
-            <p>Clicca sulle relative icone per visualizzare/modificare/eliminare l'artista.</p>
-        </section>
+        @include('partials.introSection', ['introTitle' => $introTitle, 'introText' => $introText])
 
 
         {{-- Sezione artisti --}}

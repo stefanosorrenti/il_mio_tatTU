@@ -3,11 +3,7 @@
 @section('content')
     <div class="container">
 
-        {{-- Sezione introduttiva --}}
-        <section class="text-center my-5">
-            <h1>Crea un nuovo stile</h1>
-            <p>Compila il form sottostante per aggiungere un nuovo stile al database.</p>
-        </section>
+        @include('partials.introSection', ['introTitle' => $introTitle, 'introText' => $introText])
 
         {{-- Sezione form --}}
         <div>
@@ -19,8 +15,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Salva</button>
             </form>
-            </section>
-
         </div>
-    @endsection
-        
+
+    </div>
+@endsection

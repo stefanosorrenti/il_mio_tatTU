@@ -2,12 +2,10 @@
 
 @section('content')
 
-    {{-- Sezione introduttiva --}}
+    
     <div class="container">
-        <section class="text-center my-5">
-            <h2>Modifica tatuaggio</h2>
-            <p>Modifica i dettagli del tatuaggio.</p>
-        </section>
+        
+          @include('partials.introSection', ['introTitle' => $introTitle, 'introText' => $introText])
 
         {{-- Sezione form edit --}}
         <div>

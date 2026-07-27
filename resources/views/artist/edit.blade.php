@@ -4,11 +4,7 @@
     
 <div class="container">
 
-        {{-- Sezione introduttiva --}}
-        <section class="text-center my-5">
-            <h1>Modifica artista</h1>
-            <p>Compila il form sottostante per modificare le informazioni dell'artista.</p>
-        </section>
+        @include('partials.introSection', ['introTitle' => $introTitle, 'introText' => $introText])
 
         {{-- Sezione form edit --}}
         <div>

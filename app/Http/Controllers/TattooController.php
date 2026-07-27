@@ -15,8 +15,14 @@ class TattooController extends Controller
      */
     public function index()
     {
+        $introTitle = 'Tutti i tatuaggi.';
+        $introText = 'In questa sezione puoi trovare tutti i tatuaggi presenti 
+        nel nostro database. Puoi visualizzare i dettagli di ciascun tatuaggio, 
+        modificarli o eliminarli se necessario. Inoltre, puoi aggiungere nuovi 
+        tatuaggi utilizzando il pulsante "Aggiungi Tatuaggio".';
+
         $tattoos = Tattoo::with('artist', 'styles')->get();
-        return view('tattoo.index', compact('tattoos'));
+        return view('tattoo.index', compact('tattoos', 'introTitle', 'introText'));
     }
 
     /**
@@ -24,9 +30,11 @@ class TattooController extends Controller
      */
     public function create()
     {
+        $introTitle = 'Aggiungi un nuovo tatuaggio';
+        $introText = 'Compila il form sottostante per aggiungere un nuovo tatuaggio al database.';
         $artists = Artist::all();
         $styles = Style::all();
-        return view('tattoo.create', compact('artists', 'styles'));
+        return view('tattoo.create', compact('artists', 'styles', 'introTitle', 'introText'));
     }
 
     /**
@@ -73,9 +81,11 @@ class TattooController extends Controller
      */
     public function edit(Tattoo $tattoo)
     {
+        $introTitle = 'Modifica Tatuaggio';
+        $introText = 'Compila il form sottostante per modificare le informazioni del tatuaggio.';
         $artists = Artist::all();
         $styles = Style::all();
-        return view('tattoo.edit', compact('tattoo', 'artists', 'styles'));
+        return view('tattoo.edit', compact('tattoo', 'artists', 'styles', 'introTitle', 'introText'));
     }
 
     /**
