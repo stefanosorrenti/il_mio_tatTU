@@ -13,9 +13,14 @@
         <p>Descrizione: {{ $tattoo->description }}</p>
         <p>Durata: {{ $tattoo->time }} minuti</p>
         <p>Stili: 
-            @foreach($tattoo->styles as $style)
-                {{ $style->name }}@if(!$loop->last), @endif
-            @endforeach
+
+            @if($tattoo->styles->isEmpty())
+                N/A
+            @else
+                @foreach($tattoo->styles as $style)
+                    {{ $style->name }}@if(!$loop->last), @endif
+                @endforeach
+            @endif
         </p>
 
         {{-- Azioni --}}

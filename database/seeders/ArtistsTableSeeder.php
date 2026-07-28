@@ -21,7 +21,7 @@ class ArtistsTableSeeder extends Seeder
                 $newArtist->surname = $faker->lastName(); 
                 $newArtist->bio = $faker->paragraph();
                 $newArtist->age = $faker->numberBetween(20, 60);
-                $newArtist->nationality = $faker->country();
+                $newArtist->nationality_id = $faker->numberBetween(1, 68);
 
                 $newArtist->save();
             }

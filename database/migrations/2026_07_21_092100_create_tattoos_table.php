@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('image_path'); 
             $table->decimal('price', 8, 2)->nullable();
 
-            // Relazione 1-N con Artist
-            $table->foreignId('artist_id')->constrained()->onDelete('cascade');
+            // Relazione 1-N con Artist 
+            $table->foreignId('artist_id')->nullable()->constrained()->onDelete('set null');
             $table->timestamps();
         });
     }
