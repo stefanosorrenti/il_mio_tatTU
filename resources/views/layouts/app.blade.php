@@ -23,7 +23,7 @@
     <div id="app">
 
 
-        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center w-25 w-lg-15" href="{{ url('/') }}">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" class="img-fluid">
@@ -39,28 +39,33 @@
 
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        @if (Route::currentRouteName() !== 'home')
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('home') }}">Home</a>
-                            </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('tattoo.index') }}">Tatuaggi</a>
-                            </li>
+                        @auth
+                        
+                            @if (Route::currentRouteName() !== 'home')
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('home') }}">Home</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('artist.index') }}">Artisti</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('tattoo.index') }}">Tatuaggi</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('style.index') }}">Stili</a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('artist.index') }}">Artisti</a>
+                                </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('extra') }}">Extra</a>
-                            </li>
-                        @endif
-                    </ul>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('style.index') }}">Stili</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('extra') }}">Extra</a>
+                                </li>
+                            @endif
+                        </ul>
+
+                    @endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->

@@ -1,7 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 
 /*--------GENRIC--------*/
-
+body {
+    background-color: #121212b1;
+}
 
 
 
@@ -16,6 +18,9 @@
     width: 15% !important;
 }   
 
+.text-gold {
+    color: rgba(238, 187, 19, 0.888)
+}
 
 
 /*--------LATYOUT--------*/

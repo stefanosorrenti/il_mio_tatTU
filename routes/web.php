@@ -19,18 +19,19 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Rotte tattoo
+    Route::resource('tattoo', TattooController::class);
+
+    // Rotte artist
+    Route::resource('artist', ArtistController::class);
+
+    // Rotte style
+    Route::resource('style', StyleController::class);
+
+    // Rotta per la pagina extra
+    Route::get('/extra', [ExtraController::class, 'extra'])->name('extra');
 });
 
-// Rotte tattoo
-Route::resource('tattoo', TattooController::class);
 
-// Rotte artist
-Route::resource('artist', ArtistController::class);
-
-// Rotte style
-Route::resource('style', StyleController::class);
-
-// Rotta per la pagina extra
-Route::get('/extra', [ExtraController::class, 'extra'])->name('extra');
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
