@@ -23,7 +23,7 @@
     <div id="app">
 
 
-        <nav class="navbar navbar-expand-md navbar-dark bg-light shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center w-25 w-lg-15" href="{{ url('/') }}">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" class="img-fluid">
