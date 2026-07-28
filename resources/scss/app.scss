@@ -12,6 +12,10 @@
     height: 50vh;
 }
 
+.w-15 {
+    width: 15% !important;
+}   
+
 
 
 /*--------LATYOUT--------*/
@@ -25,4 +29,13 @@
 /*--------HOMEPAGE--------*/
 div.col-12 {
     height: 150px;
+}
+
+
+/*--------MEDIA QUERY--------*/
+
+/* Utility media query */
+/* Large (>= 992px) */
+@media (min-width: 992px) {
+  .w-lg-15 { width: 15% !important; }
 }

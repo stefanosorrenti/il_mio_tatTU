@@ -4,10 +4,9 @@
 
         {{-- SEZIONE INTRODUTTIVA --}}
         <section class="text-center my-5">
-            <h2>Benevenuto {{ Auth::user()->name }}!</h2>
+            <h2>Benvenuto {{ Auth::user()->name }}!</h2>
             <p>
-                Questo è il tuo pannello di controllo, seleziona un'opzione dal menu
-                per visualizzarne, modificarne o aggiugnerne i dettagli. 
+                Questo è il tuo pannello di controllo, seleziona un'elemento dal menu per gestirlo. Puoi visualizzare, modificare o eliminare i tatuaggi, gli artisti e gli stili presenti nel sistema. Inoltre, puoi accedere alla sezione "Extra" per ulteriori funzionalità e opzioni.
             </p>
         </section>
 
@@ -22,7 +21,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="card h-100 py-4 d-flex align-items-center justify-content-center">
                                     <span class="d-flex flex-column align-items-center justify-content-center">
-                                        <i class="bi bi-pencil-fill fs-1"></i>
+                                        <i class="bi bi-brush-fill fs-1"></i>
                                         <a href="{{ route('tattoo.index') }}" class="text-center">TATUAGGI</a>
                                     </span>
                                 </div>
@@ -42,7 +41,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="card h-100 py-4 d-flex align-items-center justify-content-center">
                                     <span class="d-flex flex-column align-items-center justify-content-center">
-                                        <i class="bi bi-card-checklist fs-1"></i>
+                                        <i class="bi bi-book-fill fs-1"></i>
                                         <a href="{{ route('style.index') }}" class="text-center">STILI</a>
                                     </span>
                                 </div>
@@ -52,7 +51,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="card h-100 py-4 d-flex align-items-center justify-content-center">
                                     <span class="d-flex flex-column align-items-center justify-content-center">
-                                        <i class="bi bi-gear fs-1"></i>
+                                        <i class="bi bi-bar-chart-fill fs-1"></i>
                                         <a href="{{ route('extra') }}" class="text-center">EXTRA</a>
                                     </span>
                                 </div>
