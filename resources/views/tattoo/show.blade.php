@@ -2,31 +2,63 @@
 
 @section('content')
     <div class="container">
-        <div class="card my-5">
+        <div class="card bg-dark text-light my-5">
 
-            <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="row row-cols-1 row-cols-lg-2 g-0 h-100 justify-content-md-center align-items-md-center">
+
                 {{-- COLONNA IMMAGINE --}}
-                <div class="col">
-                    <img src="{{ asset('storage/' . $tattoo->image_path) }}" alt="{{ $tattoo->title }}" class="img-fluid ">
+                <div class="col p-3 d-flex justify-content-center align-items-center w-md-50">
+                    <img src="{{ asset('storage/' . $tattoo->image_path) }}" alt="{{ $tattoo->title }}"
+                        class="img-fluid  object-fit-fill rounded-3">
                 </div>
 
                 {{-- COLONNA DETTAGLI --}}
-                <div class="col">
+                <div class="col d-flex">
 
-                    <div class="card-body">
-                        <h3>{{ $tattoo->title }}</h3>
-                        <small class="text-muted">Aggiunto il {{ $tattoo->created_at->format('d/m/Y') }}.</small>
-                        <small class="text-muted">Artista: {{ $tattoo->artist ? $tattoo->artist->name . ' ' . $tattoo->artist->surname : 'N/A' }}.</small>
-                        <p class="card-text">{{ $tattoo->description }}
-                            <ul>
-                                <li>Stili: {{ $tattoo->style ?? 'N/A' }}</li>
-                                <li>Tempo di realizzazione: {{ $tattoo->time ?? 'N/A' }} minuti.</li>
-                                <li>Prezzo: €{{ $tattoo->price ?? 'N/A' }}</li>
-                                
+                    <div class="card-body d-flex flex-column">
+
+                        <h1 class="text-warning fw-bold mb-2 h3">{{ $tattoo->title }}</h1>
+                        <div class="d-flex flex-wrap gap-3 pb-3 border-bottom border-warning border-opacity-25">
+                            <small class="text-white-50">
+                                <i class="bi bi-calendar-event text-warning"></i>
+                                Aggiunto il {{ $tattoo->created_at->format('d/m/Y') }}
+                            </small>
+                            <small class="text-white-50">
+                                <i class="bi bi-person-fill text-warning"></i>
+                                Artista: {{ $tattoo->artist ? $tattoo->artist->name . ' ' . $tattoo->artist->surname : 'N/A' }}
+                            </small>
+                        </div>
+
+                        
+                        <div class="pb-3 my-3 border-bottom border-warning border-opacity-25">
+                            <h6 class="text-uppercase text-warning small fw-bold mb-2">Descrizione</h6>
+                            <p class="card-text text-white-50 mb-0">{{ $tattoo->description }}</p>
+                        </div>
+
+                        
+                        <div class="mt-3">
+                            <h6 class="text-uppercase text-warning small fw-bold mb-2">Dettagli</h6>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent text-white-50 px-0 d-flex justify-content-between">
+                                    <span class="fw-semibold text-white">
+                                        <i class="bi bi-palette-fill text-warning"></i>
+                                         Stili
+                                    </span>
+                                    <span>{{ $tattoo->style ?? 'N/A' }}</span>
+                                </li>
+                                <li class="list-group-item bg-transparent text-white-50 px-0 d-flex justify-content-between">
+                                    <span class="fw-semibold text-white">
+                                        <i class="bi bi-clock-fill text-warning"></i>
+                                         Tempo di realizzazione
+                                    </span>
+                                    <span>{{ $tattoo->time ?? 'N/A' }} minuti</span>
+                                </li>
+                                <li class="list-group-item bg-transparent text-warning px-0 d-flex justify-content-between fs-5 fw-bold">
+                                    <span>Prezzo</span>
+                                    <span>€{{ $tattoo->price ?? 'N/A' }}</span>
+                                </li>
                             </ul>
-                        </p>
-                        
-                        
+                        </div>
                     </div>
 
                 </div>
