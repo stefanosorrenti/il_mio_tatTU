@@ -59,6 +59,24 @@
                                 </li>
                             </ul>
                         </div>
+
+                        
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="{{ route('tattoo.index') }}" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Torna indietro
+                            </a>
+                            <a href="{{ route('tattoo.edit', $tattoo->id) }}" class="btn btn-warning">
+                                <i class="bi bi-pen-fill"></i> Modifica
+                            </a>
+                            <form action="{{ route('tattoo.destroy', $tattoo->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger"
+                                    onclick="return confirm('Sei sicuro di voler eliminare questo tatuaggio?')">
+                                    <i class="bi bi-trash-fill"></i> Elimina
+                                </button>
+                            </form>
+                        </div>
                     </div>
 
                 </div>
