@@ -41,7 +41,7 @@
                     <ul class="navbar-nav me-auto">
 
                         @auth
-                        
+
                             @if (Route::currentRouteName() !== 'home')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('home') }}">Home</a>
@@ -106,6 +106,10 @@
         <main class="">
             @yield('content')
         </main>
+
+        {{-- <footer class="text-center py-5 bg-light text-dark">
+            <p>&copy; {{ date('Y') }} Il Mio Tatto. Tutti i diritti riservati.</p>
+        </footer> --}}
     </div>
 </body>
 

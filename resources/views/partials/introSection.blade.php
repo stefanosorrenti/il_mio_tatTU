@@ -1,4 +1,4 @@
-<section class="text-center my-5">
-    <h1>{{ $introTitle }}</h1>
+<section class="text-center my-5 text-white">
+    <h1 class="text-gold">{{ $introTitle }}</h1>
     <p>{{ $introText }}</p>
 </section>

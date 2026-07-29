@@ -64,8 +64,5 @@
         </section>
 
     </div>
-
-    <footer class="text-center py-5 bg-light text-dark">
-        <p>&copy; {{ date('Y') }} Il Mio Tatto. Tutti i diritti riservati.</p>
-    </footer>
+    
 @endsection
