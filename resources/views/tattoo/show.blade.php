@@ -25,14 +25,14 @@
                             </small>
                             <small class="text-white-50">
                                 <i class="bi bi-person-fill text-warning"></i>
-                                Artista: {{ $tattoo->artist ? $tattoo->artist->name . ' ' . $tattoo->artist->surname : 'N/A' }}
+                                Artista: {{ $tattoo->artist->name . ' ' . $tattoo->artist->surname }}
                             </small>
                         </div>
 
                         
                         <div class="pb-3 my-3 border-bottom border-warning border-opacity-25">
                             <h6 class="text-uppercase text-warning small fw-bold mb-2">Descrizione</h6>
-                            <p class="card-text text-white-50 mb-0">{{ $tattoo->description }}</p>
+                            <p class="card-text text-white-50 mb-0">{{ $tattoo->description ?? 'Questo tatuaggio non ha ancora una descrizione' }}</p>
                         </div>
 
                         
@@ -55,7 +55,7 @@
                                 </li>
                                 <li class="list-group-item bg-transparent text-warning px-0 d-flex justify-content-between fs-5 fw-bold">
                                     <span>Prezzo</span>
-                                    <span>€{{ $tattoo->price ?? 'N/A' }}</span>
+                                    <span>€{{ $tattoo->price }}</span>
                                 </li>
                             </ul>
                         </div>

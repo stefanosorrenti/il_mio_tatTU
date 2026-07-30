@@ -21,17 +21,17 @@
                 </div>
                 <div class="mb-3">
                     <label for="age" class="form-label">Età</label>
-                    <input type="number" class="form-control" id="age" name="age" value="{{ $artist->age }}" required>
+                    <input type="number" class="form-control" id="age" name="age" value="{{ $artist->age }}" min="16" max="100">
                 </div>
 
                 <div class="mb-3">
                     <label for="bio" class="form-label">Biografia</label>
-                    <textarea class="form-control" id="bio" name="bio" rows="3" required>{{ $artist->bio }}</textarea>
+                    <textarea class="form-control" id="bio" name="bio" rows="3" minlength="20" maxlength="500">{{ $artist->bio }}</textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="nationality" class="form-label">Nazionalità</label>
-                    <select class="form-control" id="nationality" name="nationality_id" required>
+                    <select class="form-control" id="nationality" name="nationality_id">
                         @foreach($nationalities as $nationality)
                             <option value="{{ $nationality->id }}" {{ $artist->nationality_id == $nationality->id ? 'selected' : '' }}>{{ $nationality->name }}</option>
                         @endforeach

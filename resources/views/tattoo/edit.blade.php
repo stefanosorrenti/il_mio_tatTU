@@ -21,24 +21,24 @@
 
                 <div class="mb-3">
                     <label for="description" class="form-label">Descrizione</label>
-                    <textarea class="form-control" id="description" name="description" rows="3" required>{{ $tattoo->description }}</textarea>
+                    <textarea class="form-control" id="description" name="description" rows="3" minlength="20" maxlength="500">{{ $tattoo->description }}</textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="price" class="form-label">Prezzo (€)</label>
-                    <input type="number" step="0.01" class="form-control" id="price" name="price"
-                        value="{{ $tattoo->price }}" required>
+                    <input type="number" step="0.1" class="form-control" id="price" name="price"
+                        value="{{ $tattoo->price }}" required max="10000">
                 </div>
 
                 <div class="mb-3">
                     <label for="time" class="form-label">Durata (minuti)</label>
                     <input type="number" class="form-control" id="time" name="time" value="{{ $tattoo->time }}"
-                        required min="30">
+                         min="10" max="3000">
                 </div>
 
                 <div class="mb-3">
                     <label for="image" class="form-label">Immagine</label>
-                    <input type="file" class="form-control" id="image" name="image">
+                    <input type="file" class="form-control" id="image" name="image" required accept="image/*">
                     @if ($tattoo->image)
                         <img src="{{ $tattoo->image }}" alt="{{ 'IMMAGINE' }}"
                             style="max-width: 200px; margin-top: 10px;">

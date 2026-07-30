@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('image_path'); 
-            $table->decimal('price', 8, 2)->nullable();
+            $table->decimal('price', 8, 2);
 
             // Relazione 1-N con Artist 
             $table->foreignId('artist_id')->nullable()->constrained()->onDelete('set null');

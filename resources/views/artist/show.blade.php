@@ -12,18 +12,18 @@
                 <div class="d-flex flex-wrap gap-3 pb-3 border-bottom border-warning border-opacity-25">
                     <small class="text-white-50">
                         <i class="bi bi-person-badge-fill text-warning"></i>
-                        Età: {{ $artist->age }}
+                        Età: {{ $artist->age ?? 'N/A' }} 
                     </small>
                     <small class="text-white-50">
                         <i class="bi bi-globe-americas text-warning"></i>
-                        Nazionalità: {{ $artist->nationality->name }}
+                        Nazionalità: {{ $artist->nationality->name ?? 'N/A' }}
                     </small>
                 </div>
 
                 
                 <div class="pb-3 my-3 border-bottom border-warning border-opacity-25">
                     <h6 class="text-uppercase text-warning small fw-bold mb-2">Biografia</h6>
-                    <p class="card-text text-white-50 mb-0">{{ $artist->bio }}</p>
+                    <p class="card-text text-white-50 mb-0">{{ $artist->bio ?? 'Questo artista non ha ancora una biografia.' }}</p>
                 </div>
 
                 {{-- Sezione azioni --}}
