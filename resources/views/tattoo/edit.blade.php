@@ -51,7 +51,7 @@
                         @foreach ($artists as $artist)
                             <option value="{{ $artist->id }}"
                                 {{ $tattoo->artist_id == $artist->id ? 'selected' : '' }}>
-                                {{ $artist->name }}
+                                {{ $artist->name . ' ' . $artist->surname }}
                             </option>
                         @endforeach
                     </select>

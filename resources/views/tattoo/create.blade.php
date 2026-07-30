@@ -46,7 +46,7 @@
                         <select class="form-select bg-dark text-light border-secondary" id="artist_id" name="artist_id"
                             required>
                             @foreach ($artists as $artist)
-                                <option value="{{ $artist->id }}">{{ $artist->name }}</option>
+                                <option value="{{ $artist->id }}">{{ $artist->name . ' ' . $artist->surname }}</option>
                             @endforeach
                         </select>
                     </div>
