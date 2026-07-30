@@ -7,16 +7,21 @@
         @include('partials.introSection', ['introTitle' => $introTitle, 'introText' => $introText])
 
         {{-- Sezione form edit --}}
-        <div>
-            <form action="{{ route('style.update', $style->id) }}" method="POST">
-                @csrf
-                @method('PUT')
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ $style->name }}" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Salva</button>
-            </form>
+        <div class="card bg-dark text-light my-5">
+            <div class="card-body p-4">
+                <form action="{{ route('style.update', $style->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="mb-3">
+                        <label for="name" class="form-label text-warning fw-semibold">Nome</label>
+                        <input type="text" class="form-control bg-dark text-light border-secondary" id="name"
+                            name="name" value="{{ $style->name }}" required>
+                    </div>
+                    <button type="submit" class="btn btn-warning fw-semibold">
+                        <i class="bi bi-check-circle"></i> Salva
+                    </button>
+                </form>
+            </div>
         </div>
 
     </div>
