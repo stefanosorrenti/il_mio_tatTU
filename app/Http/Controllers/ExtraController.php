@@ -18,6 +18,9 @@ class ExtraController extends Controller
         $artistsCount = Artist::count();
         $stylesCount = Style::count();
         $tattoosCount = Tattoo::count();
-        return view('extra', compact('introTitle', 'introText', 'artistsCount', 'stylesCount', 'tattoosCount'));
+        $lastTattoo = Tattoo::latest()->first();
+        $lastStyle = Style::latest()->first();
+        $lastArtist = Artist::latest()->first();
+        return view('extra', compact('introTitle', 'introText', 'artistsCount', 'stylesCount', 'tattoosCount', 'lastTattoo', 'lastStyle', 'lastArtist'));
     }
 }

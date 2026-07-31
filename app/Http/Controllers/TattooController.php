@@ -21,7 +21,7 @@ class TattooController extends Controller
         modificarli o eliminarli se necessario. Inoltre, puoi aggiungere nuovi 
         tatuaggi utilizzando il pulsante "Aggiungi Tatuaggio".';
 
-        $tattoos = Tattoo::with('artist', 'styles')->get();
+        $tattoos = Tattoo::with('artist', 'styles')->orderBy('title')->get();
         return view('tattoo.index', compact('tattoos', 'introTitle', 'introText'));
     }
 
@@ -32,8 +32,8 @@ class TattooController extends Controller
     {
         $introTitle = 'Aggiungi un nuovo tatuaggio';
         $introText = 'Compila il form sottostante per aggiungere un nuovo tatuaggio al database.';
-        $artists = Artist::all();
-        $styles = Style::all();
+        $artists = Artist::orderBy('name')->get();
+        $styles = Style::orderBy('name')->get();
         return view('tattoo.create', compact('artists', 'styles', 'introTitle', 'introText'));
     }
 
@@ -83,8 +83,8 @@ class TattooController extends Controller
     {
         $introTitle = 'Modifica Tatuaggio';
         $introText = 'Compila il form sottostante per modificare le informazioni del tatuaggio.';
-        $artists = Artist::all();
-        $styles = Style::all();
+        $artists = Artist::orderBy('name')->get();
+        $styles = Style::orderBy('name')->get();
         return view('tattoo.edit', compact('tattoo', 'artists', 'styles', 'introTitle', 'introText'));
     }
 

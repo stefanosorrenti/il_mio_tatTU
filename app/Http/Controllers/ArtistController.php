@@ -18,7 +18,8 @@ class ArtistController extends Controller
         modificarli o eliminarli se necessario. Inoltre, puoi aggiungere nuovi 
         artisti utilizzando il pulsante "Aggiungi Artista".';
 
-        $artists = Artist::all();
+        
+        $artists = Artist::orderBy('name')->get();
         return view('artist.index', compact('artists', 'introTitle', 'introText'));
         
     }
@@ -31,7 +32,7 @@ class ArtistController extends Controller
         $introTitle = 'Aggiungi un nuovo artista';
         $introText = 'Compila il form sottostante per aggiungere un nuovo artista al database.';
 
-        $nationalities = Nationality::all()->sortBy('name');
+        $nationalities = Nationality::orderBy('name')->get();
         
         return view('artist.create', compact('nationalities', 'introTitle', 'introText'));
     }
@@ -70,7 +71,7 @@ class ArtistController extends Controller
         $introText = 'Compila il form sottostante per modificare le informazioni dell\'artista.';
 
         // Recupero tutte le nazionalità in ordine alfabetico
-        $nationalities = Nationality::all()->sortBy('name');
+        $nationalities = Nationality::orderBy('name')->get();
         return view('artist.edit', compact('artist', 'nationalities', 'introTitle', 'introText'));
     }
 

@@ -23,7 +23,7 @@
                                 <tr class="text-center">
                                     <th scope="col" class="py-3 px-4 text-warning">Immagine</th>
                                     <th scope="col" class="py-3 px-4 text-warning">Nome</th>
-                                    <th scope="col" class="py-3 px-4 text-warning">Prezzo</th>
+                                    <th scope="col" class="py-3 px-4 text-warning">Prezzo(€)</th>
                                     <th scope="col" class="py-3 px-4 text-warning">Artista</th>
                                     <th scope="col" class="py-3 px-4 text-warning text-end">Azioni</th>
                                 </tr>
@@ -36,7 +36,7 @@
                                                 <img class="rounded-2 border border-secondary border-opacity-50 object-fit-cover table-img"  src="{{ asset('storage/' . $tattoo->image_path) }}" alt="{{ 'IMMAGINE' }}">
                                         </td>
                                         <td class="py-3 px-4 fw-semibold text-white">{{ $tattoo->title }}</td>
-                                        <td class="py-3 px-4 text-white fw-semibold">{{ $tattoo->price }} €</td>
+                                        <td class="py-3 px-4 text-white fw-semibold">{{ $tattoo->price }}</td>
                                         <td class="py-3 px-4 text-white fw-semibold">{{ $tattoo->artist->name ?? 'N/A' }}</td>
                                         <td class="py-3 px-4 text-end">
                                             <a href="{{ route('tattoo.show', $tattoo->id) }}" class="btn btn-primary">

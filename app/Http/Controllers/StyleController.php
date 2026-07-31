@@ -17,7 +17,7 @@ class StyleController extends Controller
         modificarli o eliminarli se necessario. Inoltre, puoi aggiungere nuovi 
         stili utilizzando il pulsante "Aggiungi Stile".';
         
-        $styles = Style::all();
+        $styles = Style::orderBy('name')->get();
         return view('style.index', compact('styles', 'introTitle', 'introText'));
     }
 
