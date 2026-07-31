@@ -45,7 +45,7 @@
                                 class="img-fluid w-25 w-lg-15 ">
                         @endif
                         <input type="file" class="form-control bg-dark text-light border-secondary" id="image"
-                            name="image" required accept="image/*">
+                            name="image" accept="image/*">
                     </div>
 
                     <div class="mb-3">
@@ -78,9 +78,14 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-warning fw-semibold">
-                        <i class="bi bi-check-circle"></i> Aggiorna
-                    </button>
+                     <div class="d-flex justify-content-between align-items-center gap-2">
+                        <a href="{{ route('tattoo.index') }}" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Torna indietro
+                            </a>
+                        <button type="submit" class="btn btn-warning fw-semibold">
+                            <i class="bi bi-check-circle"></i> Aggiorna Tatuaggio
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

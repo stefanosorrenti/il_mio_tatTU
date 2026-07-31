@@ -41,7 +41,7 @@ class StyleController extends Controller
         $style->name = $data['name'];
         $style->save();
 
-        return redirect()->route('style.index');
+        return redirect()->route('style.show', $style->id);
     }
 
     /**

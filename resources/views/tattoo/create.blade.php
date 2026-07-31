@@ -62,9 +62,15 @@
                         @endforeach
                     </div>
 
-                    <button type="submit" class="btn btn-warning fw-semibold">
-                        <i class="bi bi-plus-circle"></i> Crea Tatuaggio
-                    </button>
+                    <div class="d-flex justify-content-between align-items-center gap-2">
+                        <a href="{{ route('tattoo.index') }}" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Torna indietro
+                            </a>
+                        <button type="submit" class="btn btn-warning fw-semibold">
+                            <i class="bi bi-plus-circle"></i> Crea Tatuaggio
+                        </button>
+                    </div>
+
                 </form>
             </div>
         </div>

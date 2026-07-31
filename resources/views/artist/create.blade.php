@@ -41,9 +41,15 @@
                             @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-warning fw-semibold">
-                        <i class="bi bi-check-circle"></i> Salva
-                    </button>
+                    
+                      <div class="d-flex justify-content-between align-items-center gap-2">
+                        <a href="{{ route('artist.index') }}" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Torna indietro
+                            </a>
+                        <button type="submit" class="btn btn-warning fw-semibold">
+                            <i class="bi bi-plus-circle"></i> Crea Artista
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

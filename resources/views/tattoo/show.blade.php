@@ -44,7 +44,7 @@
                                         <i class="bi bi-palette-fill text-warning"></i>
                                          Stili
                                     </span>
-                                    <span>{{ $tattoo->style ?? 'N/A' }}</span>
+                                    <span>{{ $tattoo->style->name ?? 'N/A' }}</span>
                                 </li>
                                 <li class="list-group-item bg-transparent text-white-50 px-0 d-flex justify-content-between">
                                     <span class="fw-semibold text-white">
