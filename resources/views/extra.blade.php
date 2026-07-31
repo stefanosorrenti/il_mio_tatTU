@@ -37,6 +37,16 @@
                             <i class="bi bi-eye-fill"></i> Visualizza
                         </a>
                     </li>
+                    <li class="list-group-item bg-transparent text-white-50 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <span class="fw-semibold text-white">
+                            <i class="bi bi-flag-fill text-warning"></i>
+                            Gestisci le nazionalità: 
+                        </span>
+                        <a href="{{ route('nationality.index') }}" class="btn btn-sm btn-outline-warning">
+                            <i class="bi bi-eye-fill"></i> Visualizza
+                        </a>
+                    </li>
+                    
                     <li class="list-group-item bg-transparent text-white-50 d-flex justify-content-between align-items-center">
                         <span class="fw-semibold text-white">
                             <i class="bi bi-people-fill text-warning"></i>

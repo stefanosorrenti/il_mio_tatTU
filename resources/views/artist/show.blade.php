@@ -18,6 +18,11 @@
                         <i class="bi bi-globe-americas text-warning"></i>
                         Nazionalità: {{ $artist->nationality->name ?? 'N/A' }}
                     </small>
+
+                    <small class="text-white-50">
+                        <i class="bi bi-calendar-event text-warning"></i>
+                        Aggiunto il {{ $artist->created_at->format('d/m/Y') }}
+                    </small>
                 </div>
 
                 
