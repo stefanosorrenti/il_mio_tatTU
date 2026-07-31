@@ -30,6 +30,9 @@
                                 <tr>
                                     <td class="py-3 px-4 fw-semibold text-white">{{ $style->name }}</td>
                                     <td class="py-3 px-4 text-end">
+                                        <a href="{{ route('style.show', $style->id) }}" class="btn btn-primary">
+                                            <i class="bi bi-eye-fill"></i>
+                                        </a>
                                         <a href="{{ route('style.edit', $style->id) }}" class="btn btn-warning">
                                             <i class="bi bi-pen-fill"></i>
                                         </a>

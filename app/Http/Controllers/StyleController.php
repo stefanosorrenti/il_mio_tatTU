@@ -47,11 +47,11 @@ class StyleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Style $style)
     {
-        //
+        return view('style.show', compact('style'));
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      */
