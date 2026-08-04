@@ -11,7 +11,7 @@
                     <img src="{{ asset('storage/' . $tattoo->image_path) }}" alt="{{ $tattoo->title }}"
                         class="img-fluid  object-fit-fill rounded-3">
                 </div>
-
+                
                 {{-- COLONNA DETTAGLI --}}
                 <div class="col d-flex">
 
@@ -44,7 +44,16 @@
                                         <i class="bi bi-palette-fill text-warning"></i>
                                          Stili
                                     </span>
-                                    <span>{{ $tattoo->style->name ?? 'N/A' }}</span>
+                                    <span>
+
+                                        @if ($tattoo->styles->isNotEmpty())
+                                            @foreach ($tattoo->styles as $style)
+                                                {{ $style->name }}{{ !$loop->last ? ', ' : '' }}
+                                            @endforeach
+                                        @else
+                                            N/A
+                                        @endif
+                                    </span>
                                 </li>
                                 <li class="list-group-item bg-transparent text-white-50 px-0 d-flex justify-content-between">
                                     <span class="fw-semibold text-white">
