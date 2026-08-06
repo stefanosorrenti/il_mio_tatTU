@@ -13,6 +13,7 @@ class TattooApiController extends Controller
      */
     public function index()
     {
+        
         /* Tattoo + artist + nationality + styles */
         $tattoos = Tattoo::with('artist', 'artist.nationality', 'styles')->get();
         return response()->json([
