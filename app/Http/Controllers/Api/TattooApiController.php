@@ -16,6 +16,14 @@ class TattooApiController extends Controller
         
         /* Tattoo + artist + nationality + styles */
         $tattoos = Tattoo::with('artist', 'artist.nationality', 'styles')->get();
+        
+        /* Gestico la path */
+        foreach ($tattoos as $tattoo) {
+            $tattoo->image_path = asset('storage/' . $tattoo->image_path);
+            
+        }
+
+        
         return response()->json([
             'success' => true,
             'data' => $tattoos
@@ -37,6 +45,8 @@ class TattooApiController extends Controller
             ], 404);
         }
 
+        /* Gestico la path */
+        $tattoo->image_path = asset('storage/' . $tattoo->image_path);
         return response()->json([
             'success' => true,
             'data' => $tattoo
